@@ -41,6 +41,7 @@ const Login = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Email address"
+            className="border-2 border-black mb-5 px-4 py-2"
           />
           <label className="font-bold">Password</label>
           <input
@@ -48,20 +49,21 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Your password"
+            className="border-2 border-black px-4 p-2"
           />
           <button
             onClick={handleLogin}
-            className="bg-black text-white py-3 my-3"
+            className="bg-black text-white py-3 mt-10"
           >
             Sign In
           </button>
-          <div>
+          <div className="text-center my-2">
             Don't have an account?{" "}
             <Link className="text-[#7671DE]" to="/signup">
               Sign up
             </Link>
           </div>
-          <Link className="text-[#7671DE]" to="">
+          <Link className="text-[#7671DE] text-center" to="">
             {" "}
             Forgor password
           </Link>
