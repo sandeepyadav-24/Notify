@@ -7,6 +7,7 @@ import TodoList from "./Components/TodoList";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { authState } from "./store/authState.js";
+import Homepage from "./Components/Homepage.js";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/todos" element={<TodoList />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Homepage />} />
         </Routes>
       </Router>
     </RecoilRoot>
@@ -42,7 +43,7 @@ function InitState() {
         navigate("/login");
       }
     } catch (e) {
-      navigate("/login");
+      //navigate("/login");
     }
   };
   useEffect(() => {
