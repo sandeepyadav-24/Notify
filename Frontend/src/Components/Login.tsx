@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     const response = await fetch("http://localhost:3000/auth/login", {
@@ -15,21 +16,21 @@ const Login = () => {
     const data = await response.json();
     if (data.token) {
       localStorage.setItem("token", data.token);
-      //window.location = "/todos";
+      navigate("/");
     } else {
       alert("invalid credentials");
     }
   };
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row ">
       <div className="Image w-2/4">
         <img
           className="h-screen"
           src="https://clickup.com/blog/wp-content/uploads/2020/01/note-taking.png"
         ></img>
       </div>
-      <div className="Data  h-screen w-2/4  ">
+      <div className="Data  h-screen w-2/4 bg-[#ebeafb] ">
         <div className="flex flex-col py-52 px-28">
           <h1 className="text-[#7671DE] font-extrabold text-5xl my-1">
             Sign in

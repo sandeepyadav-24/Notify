@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { authState } from "./store/authState.js";
 import Homepage from "./Components/Homepage.js";
+import About from "./Components/About.js";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/todos" element={<TodoList />} />
+          <Route path="/about" element={<About />} />
           <Route path="/" element={<Homepage />} />
         </Routes>
       </Router>
