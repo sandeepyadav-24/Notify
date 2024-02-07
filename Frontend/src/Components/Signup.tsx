@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 //import { useSetRecoilState } from "recoil";
 //import { authState } from "../store/authState.ts";
 
@@ -18,9 +20,10 @@ const Signup = () => {
     const data = await response.json();
     if (data.token) {
       localStorage.setItem("token", data.token);
-      navigate("/todos");
+      //toast(data.message);
+      navigate("/login");
     } else {
-      alert("Error while signing up");
+      toast(data.message);
     }
   };
 
@@ -60,6 +63,7 @@ const Signup = () => {
           >
             Sign Up
           </button>
+          <ToastContainer />
           <div className="text-center my-2">
             Already Signed Up?
             <Link className="text-[#7671DE]" to="/login">

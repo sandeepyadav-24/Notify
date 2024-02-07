@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -14,11 +16,12 @@ const Login = () => {
     });
     // Todo: Create a type for the response that you get back from the server
     const data = await response.json();
+    console.log(data.message);
     if (data.token) {
       localStorage.setItem("token", data.token);
       navigate("/");
     } else {
-      alert("invalid credentials");
+      toast("invalid credentials");
     }
   };
 
@@ -58,6 +61,7 @@ const Login = () => {
           >
             Sign In
           </button>
+          <ToastContainer />
           <div className="text-center my-2">
             Don't have an account?{" "}
             <Link className="text-[#7671DE]" to="/signup">
@@ -65,7 +69,6 @@ const Login = () => {
             </Link>
           </div>
           <Link className="text-[#7671DE] text-center" to="">
-            {" "}
             Forgor password
           </Link>
         </div>

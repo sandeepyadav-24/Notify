@@ -12,7 +12,7 @@ app.use("/auth", authRoutes);
 app.use("/todo", todoRoutes);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Post is listening at Port : ${port}`);
 });
 
 mongoose.connect(

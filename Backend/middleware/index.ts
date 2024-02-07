@@ -10,6 +10,7 @@ export const authenticateJwt = (
   res: Response,
   next: NextFunction
 ) => {
+  console.log("auth");
   const authHeader = req.headers.authorization;
   if (authHeader) {
     const token = authHeader.split(" ")[1];
