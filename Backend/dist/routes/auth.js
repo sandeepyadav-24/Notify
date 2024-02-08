@@ -18,34 +18,36 @@ const index_1 = require("../middleware/index");
 const index_2 = require("../db/index");
 const router = express_1.default.Router();
 router.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username, password } = req.body;
-    const user = yield index_2.User.findOne({ username });
+    const { email, password } = req.body;
+    const user = yield index_2.User.findOne({ email });
     if (user) {
         res.status(403).json({ message: "User already exists" });
     }
     else {
-        const newUser = new index_2.User({ username, password });
+        const newUser = new index_2.User({ email, password });
         yield newUser.save();
         const token = jsonwebtoken_1.default.sign({ id: newUser._id }, index_1.SECRET, { expiresIn: "1h" });
         res.json({ message: "User created successfully", token });
     }
 }));
 router.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username, password } = req.body;
-    const user = yield index_2.User.findOne({ username, password });
+    const { email, password } = req.body;
+    console.log(`${email} , ${password}`);
+    const user = yield index_2.User.findOne({ email, password });
+    console.log(user);
     if (user) {
         const token = jsonwebtoken_1.default.sign({ id: user._id }, index_1.SECRET, { expiresIn: "1h" });
         res.json({ message: "Logged in successfully", token });
     }
     else {
-        res.status(403).json({ message: "Invalid username or password" });
+        res.status(403).json({ message: "Invalid email or password" });
     }
 }));
 router.get("/me", index_1.authenticateJwt, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.headers["userId"];
     const user = yield index_2.User.findOne({ _id: userId });
     if (user) {
-        res.json({ username: user.username });
+        res.json({ username: user.email });
     }
     else {
         res.status(403).json({ message: "User not logged in" });

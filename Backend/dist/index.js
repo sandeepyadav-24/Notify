@@ -17,4 +17,4 @@ app.use("/todo", todo_1.default);
 app.listen(port, () => {
     console.log(`Post is listening at Port : ${port}`);
 });
-mongoose_1.default.connect("mongodb+srv://sandeepyadav004343:xV5SUmDEKhOvIVPZ@cluster0.s0cvlbe.mongodb.net/");
+mongoose_1.default.connect("mongodb+srv://sandeepyadav24:sandyDon%40123@cluster0.d7vrvhj.mongodb.net/");

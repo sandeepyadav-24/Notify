@@ -5,7 +5,6 @@ import { Todo } from "../db";
 const router = express.Router();
 
 router.post("/todos", authenticateJwt, (req, res) => {
-  console.log("post todos");
   const { title, description } = req.body;
   const done = false;
   const userId = req.headers["userId"];
@@ -23,13 +22,10 @@ router.post("/todos", authenticateJwt, (req, res) => {
 });
 
 router.get("/todos", authenticateJwt, (req, res) => {
-  console.log("preUserID");
   const userId = req.headers["userId"];
 
   Todo.find({ userId })
     .then((todos) => {
-      console.log(todos);
-      console.log("Post");
       res.json(todos);
     })
     .catch((err) => {

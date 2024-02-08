@@ -6,10 +6,10 @@ import "react-quill/dist/quill.snow.css";
 const NewNote = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState();
-
   const handleChange = (value) => {
     setDescription(value);
   };
+
   const submitButton = async () => {
     console.log(`Title: ${title} , Content: ${description}`);
     const response = await fetch("http://localhost:3000/todo/todos", {
