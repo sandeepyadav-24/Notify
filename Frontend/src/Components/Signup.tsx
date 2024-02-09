@@ -23,6 +23,7 @@ const Signup = () => {
       //toast(data.message);
       navigate("/login");
     } else {
+      console.log(data.message);
       toast(data.message);
     }
   };

@@ -45,7 +45,7 @@ const Note = () => {
     <div className="flex flex-row  bg-[#f5f5fc]">
       <LeftNavbar />
       <div className="w-3/4 p-20 h-screen overflow-y-auto">
-        <h1>{particularNote.title}</h1>
+        <h1 className="text-3xl font-bold">{particularNote.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: particularNote.description }} />
       </div>
     </div>

@@ -16,9 +16,17 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const express_1 = __importDefault(require("express"));
 const index_1 = require("../middleware/index");
 const index_2 = require("../db/index");
+const common_1 = require("@sandeepyadav24/common");
 const router = express_1.default.Router();
 router.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { email, password } = req.body;
+    const parsedResponse = common_1.userInput.safeParse(req.body);
+    if (!parsedResponse.success) {
+        return res.status(411).json({
+            message: "error in validation",
+        });
+    }
+    const email = parsedResponse.data.email;
+    const password = parsedResponse.data.password;
     const user = yield index_2.User.findOne({ email });
     if (user) {
         res.status(403).json({ message: "User already exists" });
