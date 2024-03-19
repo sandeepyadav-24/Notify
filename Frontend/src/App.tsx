@@ -7,6 +7,7 @@ import PageRender from "./Components/PageRender";
 import About from "./Components/About.js";
 import Note from "./Components/Note";
 import NewNote from "./Components/NewNote.js";
+import AiNote from "./Components/AiNote.js";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<PageRender />} />
           <Route path="/note/:noteId" element={<Note />} />
           <Route path="newNote" element={<NewNote />} />
+          <Route path="aiNote" element={<AiNote />} />
         </Routes>
       </Router>
     </RecoilRoot>

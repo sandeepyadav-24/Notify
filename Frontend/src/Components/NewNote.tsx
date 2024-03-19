@@ -2,12 +2,18 @@ import { useState } from "react";
 import LeftNavbar from "./LeftNavbar";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
 
 const NewNote = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState();
   const handleChange = (value) => {
     setDescription(value);
+  };
+
+  const requestAi = () => {
+    navigate("/aiNote");
   };
 
   const submitButton = async () => {
@@ -30,12 +36,20 @@ const NewNote = () => {
       <div className="flex flex-col w-3/4">
         <div className="flex flex-row justify-between bg-[#f1f0f8]">
           <h1 className="mx-5 my-3 py-2 font-semibold text-lg">{title}</h1>
-          <button
-            className="my-3 mx-5 bg-[#7671DE] px-5 py-2 rounded-md"
-            onClick={submitButton}
-          >
-            Submit
-          </button>
+          <div>
+            <button
+              className="my-3 mx-5 bg-[#7671DE] px-5 py-2 rounded-md"
+              onClick={requestAi}
+            >
+              Write with AI
+            </button>
+            <button
+              className="my-3 mx-5 bg-[#7671DE] px-5 py-2 rounded-md"
+              onClick={submitButton}
+            >
+              Submit
+            </button>
+          </div>
         </div>
         <div className=" overflow-y-auto">
           <input
