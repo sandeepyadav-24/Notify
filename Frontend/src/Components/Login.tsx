@@ -26,15 +26,15 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row ">
-      <div className="Image w-2/4">
+    <div className="flex flex-col md:flex-row ">
+      <div className="Image md:w-1/2">
         <img
           className="h-screen"
           src="https://clickup.com/blog/wp-content/uploads/2020/01/note-taking.png"
         ></img>
       </div>
-      <div className="Data  h-screen w-2/4 bg-[#ebeafb] ">
-        <div className="flex flex-col py-52 px-28">
+      <div className="Data  h-screen md:w-1/2 bg-[#ebeafb] ">
+        <div className="flex flex-col py-40 md:py-52 px-5 md:px-28">
           <h1 className="text-[#7671DE] font-extrabold text-5xl my-1">
             Sign in
           </h1>

@@ -32,7 +32,7 @@ const LeftNavbar = () => {
     navigate(`/note/${noteId}`);
   };
   return (
-    <div className="w-1/4  bg-[#d5d3f3] p-10 h-screen relative">
+    <div className="md:w-1/4  bg-[#d5d3f3] p-10 h-screen relative">
       <div className="personal my-10">
         <h1>Sandeep Yadav</h1>
         <h1>sandeepyadav004343@gmail.com</h1>

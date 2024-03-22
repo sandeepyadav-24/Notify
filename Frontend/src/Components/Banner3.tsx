@@ -4,9 +4,9 @@ const Banner3 = () => {
   const signupUrl = "http://localhost:5173/signup";
   const loginUrl = "http://localhost:5173/login";
   return (
-    <div className="mx-28 mt-20">
+    <div className="mx-10 md:mx-28 mt-20">
       <div className="flex flex-row bg-[#7671DE] rounded-lg px-10 py-10 ">
-        <div className="w-1/5">
+        <div className="w-1/2">
           <h1 className="font-extrabold text-xl">Social Media</h1>
           <h1 className="text-white">
             <Link to="https://github.com/sandeepyadav-24">GitHub</Link>
@@ -30,7 +30,7 @@ const Banner3 = () => {
             </Link>
           </h1>
         </div>
-        <div className="w-1/5">
+        <div className="w-1/2">
           <h1 className="font-extrabold text-xl">Get Started</h1>
           <h1 className="text-white">
             <Link to={signupUrl}>Sign up for free</Link>

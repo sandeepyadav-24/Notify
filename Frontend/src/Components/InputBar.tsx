@@ -23,7 +23,7 @@ const InputBar = (props) => {
   };
 
   return (
-    <div className="border-2  w-1/2 mx-auto my-20 border-[#B09FF4] flex justify-between rounded-xl">
+    <div className="border-2  md:w-1/2 mx-auto my-20 border-[#B09FF4] flex justify-between rounded-xl">
       <div className="flex flex-row">
         <div className="py-1 px-2">
           <svg
@@ -44,7 +44,7 @@ const InputBar = (props) => {
         <input
           type="text"
           placeholder="Ask AI to write anything... "
-          className="w-96 outline-none "
+          className="w-64 md:w-96 outline-none "
           onChange={(e) => {
             setSeacrh(e.target.value);
           }}

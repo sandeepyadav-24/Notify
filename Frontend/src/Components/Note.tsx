@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const SummaryModal = ({ summary, onClose }) => {
   return (
     <div className="fixed top-0 left-0  h-full w-full flex justify-center items-center bg-gray-900 bg-opacity-50">
-      <div className="bg-white p-8 rounded-lg mx-96">
+      <div className="bg-white p-8 rounded-lg mx-10 md:mx-96">
         <h2 className="text-2xl font-bold mb-4">Summary</h2>
         <div>{summary}</div>
         <button
@@ -67,9 +67,9 @@ const Note = () => {
   if (!particularNote) {
     // Handle the case where the note with the specified noteId is not found
     return (
-      <div className="flex flex-row bg-[#f5f5fc]">
+      <div className="flex flex-col md:flex-row bg-[#f5f5fc]">
         <LeftNavbar />
-        <div className="w-3/4 p-20 ">
+        <div className="md:w-3/4 p-20 ">
           <h1>Note not found</h1>
         </div>
       </div>
@@ -77,9 +77,9 @@ const Note = () => {
   }
 
   return (
-    <div className="flex flex-row  bg-[#f5f5fc]">
+    <div className="flex flex-col md:flex-row  bg-[#f5f5fc]">
       <LeftNavbar />
-      <div className="w-3/4 p-20 h-screen overflow-y-auto ">
+      <div className="md:w-3/4 py-10 px-5 md:p-20 h-screen overflow-y-auto ">
         <div className="relative">
           <button
             className=" bg-[#7671DE] px-5 py-2 rounded-md absolute right-0"

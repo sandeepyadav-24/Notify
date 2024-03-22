@@ -23,13 +23,13 @@ const AiNote = () => {
     }
   }, [output]);
   return (
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       <LeftNavbar />
-      <div className="flex flex-col w-3/4">
+      <div className="flex flex-col md:w-3/4">
         <div className="   ">
           <InputBar onSearch={handleSearch} />
         </div>
-        <div className="mx-20">
+        <div className=" mx-5 md:mx-20">
           {isLoading ? ( // Render loader when isLoading is true
             <div className="text-center my-40">
               <CircularProgress />

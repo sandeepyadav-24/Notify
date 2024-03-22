@@ -18,5 +18,6 @@ app.listen(port, () => {
 });
 
 mongoose.connect(
-  "mongodb+srv://sandeepyadav24:sandyDon%40123@cluster0.d7vrvhj.mongodb.net/"
+  process.env.MONGO_URL ||
+    "mongodb+srv://sandeepyadav24:sandyDon%40123@cluster0.d7vrvhj.mongodb.net/"
 );
